@@ -2,16 +2,17 @@ package com.example.docapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.docapp.databinding.ActivityCreateaccBinding
 
 class createacc : AppCompatActivity() {
+    private lateinit var binding: ActivityCreateaccBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_createacc)
+        binding = ActivityCreateaccBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val text : TextView = findViewById(R.id.textclickable2)
-        text.setOnClickListener() {
+        binding.textclickable2.setOnClickListener() {
             intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
 

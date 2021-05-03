@@ -2,24 +2,21 @@ package com.example.docapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.docapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val text : TextView = findViewById(R.id.textclickable)
-        val button : Button = findViewById(R.id.main_login_button)
-
-        button.setOnClickListener() {
+        binding.mainLoginButton.setOnClickListener() {
             intent = Intent(this, mainscreen::class.java)
             startActivity(intent)
         }
-        text.setOnClickListener(){
+        binding.textclickable.setOnClickListener(){
             intent = Intent(this, createacc::class.java)
             startActivity(intent)
         }

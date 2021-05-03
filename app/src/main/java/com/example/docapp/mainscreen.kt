@@ -2,16 +2,17 @@ package com.example.docapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.example.docapp.databinding.ActivityMainscreenBinding
 
 class mainscreen : AppCompatActivity() {
+    private lateinit var binding: ActivityMainscreenBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_mainscreen)
+        binding = ActivityMainscreenBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val t : RelativeLayout = findViewById(R.id.pro1)
-        t.setOnClickListener {
+        binding.pro1.setOnClickListener {
             intent = Intent(this, subscreen::class.java)
             startActivity(intent)
         }
