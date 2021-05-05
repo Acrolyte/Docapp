@@ -15,7 +15,7 @@ class createacc : AppCompatActivity() {
         binding.textclickable2.setOnClickListener() {
             intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-
+            finish()
         }
     }
 }

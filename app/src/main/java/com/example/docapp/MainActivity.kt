@@ -15,10 +15,12 @@ class MainActivity : AppCompatActivity() {
         binding.mainLoginButton.setOnClickListener() {
             intent = Intent(this, mainscreen::class.java)
             startActivity(intent)
+            finish()
         }
         binding.textclickable.setOnClickListener(){
             intent = Intent(this, createacc::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }
